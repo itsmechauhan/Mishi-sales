@@ -11,16 +11,44 @@
     "isDeal": true,
     "dealEnd": "2026-01-16T23:59:59"
   },
+
   {
     "id": 2,
-    "name": "Smart Watch Pro",
-    "description": "Health tracking with premium AMOLED display.",
-    "image": "https://m.media-amazon.com/images/I/71ZDY57yTQL._SL1500_.jpg",
-    "affiliateLink": "https://your-affiliate-link.com",
-    "category": "Electronics",
-    "originalPrice": 9999,
-    "dealPrice": 7999,
-    "isDeal": false
+    "name": "Lakmē Sun Expert SPF 50 PA+++ Ultra Matte Lotion Sunscreen with Niacinamide | Helps reduce pigmentation | Non-sticky | For All Skin Types, For UVA/B Protection,No White Cast 100ml",
+    "description": "Shields skin against UVA and UVB rays Prevents sunburn|| dark spots|| and premature aging Moisturize the skin and makes it glow Prevents tan lines Lightens the skin tone on regular use Gives a cooling effect",
+    "image": "https://m.media-amazon.com/images/I/41weWR13HDL._SL1000_.jpg",
+    "affiliateLink": "https://amzn.to/45cQQYt",
+    "category": "Deals",
+    "originalPrice": 500,
+    "dealPrice": 250,
+    "isDeal": true,
+    "dealEnd": "2026-01-19T23:59:59"
+  },
+  {
+    "id": 3,
+    "name": "Lakme Vitamin C+ Serum 30 ml",
+    "description": "About this item reduce skin dullness by fighting free radicals and promoting skin health enriched with the richest known source of Vitamin C – Kakadu Plum can fight multiple skin problems like ageing|| pollution & sun damage and dullness of skin Light weight on skin Non greasy texture Skin feels nourished",
+    "image": "https://m.media-amazon.com/images/I/417vw+y4IbL._SL1000_.jpg",
+    "affiliateLink": "https://amzn.to/4jGe530",
+    "category": "Deals",
+    "originalPrice": 599,
+    "dealPrice": 311,
+    "isDeal": true,
+    "dealEnd": "2026-01-18T23:59:59"
   }
+  ,
+  {
+    "id": 4,
+    "name": "Desidiya® Lying Panda Night Light - Soft Silicone Color-Changing LED Touch Lamp with Timer for Bedroom & Office",
+    "description": "🐼 Cute Panda Design: Features a charming Cute Panda shape, adding whimsy and charm to any room, perfect for both children and adults.🧸 Squishy Silicone Material: Made from soft, high-quality silicone, offering a tactile and soothing experience while being durable and safe for all ages.",
+    "image": "https://m.media-amazon.com/images/I/51mcAG8wxVL._SL1500_.jpg",
+    "affiliateLink": "https://amzn.to/4b3vSz8",
+    "category": "Deals",
+    "originalPrice": 999,
+    "dealPrice": 385,
+    "isDeal": true,
+    "dealEnd": "2026-01-16T23:59:59"
+  }
+  
 ]
     
