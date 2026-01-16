@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Gaming Headset",
+    "description": "Ultra bass, RGB lighting, low latency sound.",
+    "image": "https://m.media-amazon.com/images/I/61nMAnWsZtL._SL1500_.jpg",
+    "affiliateLink": "https://your-affiliate-link.com",
+    "category": "Deals",
+    "originalPrice": 29999,
+    "dealPrice": 6499,
+    "isDeal": true,
+    "dealEnd": "2026-01-20T23:59:59"
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch Pro",
+    "description": "Health tracking with premium AMOLED display.",
+    "image": "https://m.media-amazon.com/images/I/71ZDY57yTQL._SL1500_.jpg",
+    "affiliateLink": "https://your-affiliate-link.com",
+    "category": "Electronics",
+    "originalPrice": 9999,
+    "dealPrice": 7999,
+    "isDeal": false
+  }
+]
+    
