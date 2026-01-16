@@ -1,4 +1,6 @@
-import React ,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import ProductCard from "./ProductCard";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -47,6 +49,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-[#030b1a] to-black text-white font-[Poppins]">
+
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-2xl border-b border-blue-500/20">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4">
@@ -81,87 +84,50 @@ export default function App() {
       </div>
 
       {/* HERO */}
-      <div className="text-center py-14">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center py-14"
+      >
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
           Luxury Deals. Curated Elegance.
         </h2>
         <p className="text-gray-400 mt-3">
           Where premium meets performance.
         </p>
-      </div>
+      </motion.div>
 
       {/* PRODUCTS */}
       <div className="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {filtered.map((item) => {
-          const discount = calcDiscount(
-            item.originalPrice,
-            item.dealPrice
-          );
+  {filtered.map((item) => {
+    const discount = calcDiscount(
+      item.originalPrice,
+      item.dealPrice
+    );
 
-          return (
-            <div
-              key={item.id}
-              onClick={() => window.open(item.affiliateLink, "_blank")}
-              className="cursor-pointer group relative bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-blue-500/10
-              hover:border-blue-400/50 transition-all duration-700 hover:scale-[1.04] shadow-xl hover:shadow-blue-500/30"
-            >
-              {item.isDeal && (
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-red-600 to-pink-600 px-3 py-1 text-xs rounded-full shadow-lg">
-                  {discount}% OFF
-                </div>
-              )}
+    return (
+      <ProductCard
+        key={item.id}
+        item={item}
+        discount={discount}
+        getRemainingTime={getRemainingTime}
+      />
+    );
+  })}
+</div>
 
-              <div className="overflow-hidden rounded-2xl">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
 
-              <h3 className="mt-5 text-lg font-semibold text-blue-300">
-                {item.name}
-              </h3>
-              <p className="text-sm text-gray-400 mt-1">
-                {item.description}
-              </p>
 
-              <div className="mt-4 flex items-center gap-3">
-                <span className="text-gray-500 line-through">
-                  ₹{item.originalPrice}
-                </span>
-                <span className="text-blue-400 text-xl font-bold">
-                  ₹{item.dealPrice}
-                </span>
-                <span className="text-green-400 text-sm">
-                  {discount}% OFF
-                </span>
-              </div>
-
-              {item.isDeal && (
-                <div className="mt-2 text-pink-400 text-sm font-mono">
-                  Ends in: {getRemainingTime(item.dealEnd)}
-                </div>
-              )}
-
-              <a
-                href={item.affiliateLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="block mt-5 text-center py-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500
-                hover:opacity-90 transition shadow-lg"
-              >
-                View Luxury Deal
-              </a>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* FOOTER */}
-      <footer className="bg-gradient-to-t from-black via-[#020b1f] to-black border-t border-blue-500/20">
-        <div className="max-w-7xl mx-auto px-6 py-12 text-center">
+      {/* FOOTER (LUXURY GLOW) */}
+      <footer
+        onMouseMove={(e) => {
+          e.currentTarget.style.setProperty("--x", `${e.clientX}px`);
+          e.currentTarget.style.setProperty("--y", `${e.clientY}px`);
+        }}
+        className="relative bg-gradient-to-t from-black via-[#020b1f] to-black border-t border-blue-500/20 overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-6 py-16 text-center relative z-10">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Mishi Sales
           </h2>
@@ -171,6 +137,11 @@ export default function App() {
           <div className="mt-6 text-xs text-gray-600">
             © {new Date().getFullYear()} Mishi Sales — A Premium Digital Boutique
           </div>
+        </div>
+
+        {/* glow layer */}
+        <div className="pointer-events-none absolute inset-0
+          bg-[radial-gradient(600px_circle_at_var(--x)_var(--y),rgba(59,130,246,0.25),transparent_40%)]">
         </div>
       </footer>
     </div>
