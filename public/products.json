@@ -8,7 +8,7 @@
     "category": "Deals",
     "originalPrice": 2466,
     "dealPrice": 989,
-    "isDeal": true,
+    "isDeal": false,
     "dealEnd": "2026-01-16T23:59:59"
   },
 
@@ -46,7 +46,7 @@
     "category": "Deals",
     "originalPrice": 999,
     "dealPrice": 385,
-    "isDeal": true,
+    "isDeal": false,
     "dealEnd": "2026-01-16T23:59:59"
   }
   
