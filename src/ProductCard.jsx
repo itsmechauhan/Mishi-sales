@@ -47,11 +47,11 @@ export default function ProductCard({
         />
       </div>
 
-      <h3 className="mt-5 text-lg font-semibold text-blue-300">
+      <h3 className="mt-5 text-lg font-semibold text-blue-300 line-clamp-2">
         {item.name}
       </h3>
 
-      <p className="text-sm text-gray-400 mt-1">
+      <p className="text-sm text-gray-400 mt-1 line-clamp-3">
         {item.description}
       </p>
 
